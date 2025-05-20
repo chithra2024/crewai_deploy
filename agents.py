@@ -2,17 +2,16 @@ from crewai import Agent
 from langchain_groq import ChatGroq
 from langchain_openai import ChatOpenAI
 import os
-from crewai_tools import SerperDevTool, WebsiteSearchTool, ScrapeWebsiteTool
+from crewai_tools import WebsiteSearchTool, ScrapeWebsiteTool
 
 class FinanceCrewAgents:
     def __init__(self):
-        self.serper = SerperDevTool()
         self.web = WebsiteSearchTool()
         self.web_scrape = ScrapeWebsiteTool()
 
         # Language models
         self.gpt4 = ChatOpenAI(model_name="gpt-4o", temperature=0.7)
-        self.gemma = ChatGroq(temperature=0.7, groq_api_key=os.environ.get("GROQ_API_KEY"), model_name="gemma2-9b-it")
+        self.gemma = ChatGroq(temperature=0.7, groq_api_key=os.environ.get("GROQ_API_KEY"), model_name="gemma-2b-it")
 
         # Select model
         self.selected_llm = self.gpt4
@@ -25,7 +24,7 @@ class FinanceCrewAgents:
             verbose=True,
             allow_delegation=False,
             llm=self.selected_llm,
-            tools=[self.serper, self.web, self.web_scrape],
+            tools=[self.web, self.web_scrape],
             max_iter=3
         )
 
@@ -48,6 +47,6 @@ class FinanceCrewAgents:
             verbose=True,
             allow_delegation=False,
             llm=self.selected_llm,
-            tools=[self.serper, self.web, self.web_scrape],
+            tools=[self.web, self.web_scrape],
             max_iter=3
         )
