@@ -2,23 +2,25 @@
 name = "crewai-28"
 version = "0.28.8"
 description = "Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks."
-authors = [""]
-# readme = "readme.md"  # Commented out to avoid install errors if file doesn't exist
-# package-mode = false  # Disable packaging mode since this is not a library
+authors = ["ssss"]
+readme = "readme.md"
+packages = [
+    { include = "crewai", from = "src" },
+]
 
 [tool.poetry.urls]
 Homepage = "https://crewai.com"
-Documentation = ""
-Repository = ""
+Documentation = "https://github.com/joaomdmoura/CrewAI/wiki/Index"
+Repository = "https://github.com/joaomdmoura/crewai"
 
 [tool.poetry.dependencies]
-python = ">=3.10,<=3.13"
 streamlit = "^1.13.0"
 pysqlite3-binary = "^0.5.1"
+python = ">=3.10,<=3.13"
 pydantic = "^2.4.2"
 langchain = "^0.1.10"
 openai = "^1.13.3"
-langchain_groq = "^0.1.3"
+langchain_groq = "^0.1.3"  
 opentelemetry-api = "^1.22.0"
 opentelemetry-sdk = "^1.22.0"
 opentelemetry-exporter-otlp-proto-http = "^1.22.0"
@@ -43,11 +45,17 @@ pre-commit = "^3.6.0"
 mkdocs = "^1.4.3"
 mkdocstrings = "^0.22.0"
 mkdocstrings-python = "^1.1.2"
-mkdocs-material = { extras = ["imaging"], version = "^9.5.7" }
+mkdocs-material = {extras = ["imaging"], version = "^9.5.7"}
 mkdocs-material-extensions = "^1.3.1"
 pillow = "^10.2.0"
 cairosvg = "^2.7.1"
 crewai-tools = "^0.1.7"
+
+[tool.isort]
+profile = "black"
+known_first_party = ["crewai"]
+
+
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.0.0"
@@ -56,10 +64,6 @@ python-dotenv = "1.0.0"
 
 [tool.poetry.scripts]
 crewai = "crewai.cli.cli:crewai"
-
-[tool.isort]
-profile = "black"
-known_first_party = ["crewai"]
 
 [build-system]
 requires = ["poetry-core"]
