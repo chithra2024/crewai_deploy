@@ -1,0 +1,6 @@
+streamlit
+crewai
+serper-api>=0.2.0
+openai
+groq
+python-dotenv
