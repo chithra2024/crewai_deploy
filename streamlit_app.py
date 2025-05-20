@@ -5,7 +5,6 @@ import os
 st.title('💼 Investment Recommendation Assistant')
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
-os.environ["SERPER_API_KEY"] = st.secrets["SERPER_API_KEY"]
 
 with st.sidebar:
     st.header('Input Financial Topic')
