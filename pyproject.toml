@@ -4,14 +4,15 @@ version = "0.28.8"
 description = "Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks."
 authors = ["ssss"]
 readme = "readme.md"
-packages = [
-    { include = "crewai", from = "src" },
-]
+
+# packages = [
+#     { include = "crewai", from = "src" },
+# ]
 
 [tool.poetry.urls]
 Homepage = "https://crewai.com"
-Documentation = "https://github.com/joaomdmoura/CrewAI/wiki/Index"
-Repository = "https://github.com/joaomdmoura/crewai"
+Documentation = ""
+Repository = ""
 
 [tool.poetry.dependencies]
 streamlit = "^1.13.0"
