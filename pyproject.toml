@@ -3,10 +3,11 @@ name = "crewai-28"
 version = "0.28.8"
 description = "Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks."
 authors = [""]
-readme = "README.md"
-packages = [
-    { include = "crewai", from = "src" },
-]
+# readme = "README.md"
+package-mode = false
+# packages = [
+#     { include = "crewai", from = "src" },
+# ]
 
 [tool.poetry.urls]
 Homepage = "https://crewai.com"
