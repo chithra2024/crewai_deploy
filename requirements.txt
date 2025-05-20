@@ -3,3 +3,5 @@ crewai
 openai
 groq
 python-dotenv
+pysqlite3-binary
+
