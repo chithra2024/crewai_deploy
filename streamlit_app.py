@@ -1,3 +1,4 @@
+import patch_sqlite  # ← Add this as the first import
 import streamlit as st
 from main import FinanceCrew
 import os
