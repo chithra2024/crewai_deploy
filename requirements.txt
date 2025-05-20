@@ -5,6 +5,8 @@ groq
 python-dotenv
 pysqlite3-binary
 langchain_groq==0.1.2  # Or the latest known working version
+langchain_openai==0.1.7
+
 
 
 
