@@ -4,4 +4,6 @@ openai
 groq
 python-dotenv
 pysqlite3-binary
+langchain_groq
+
 
